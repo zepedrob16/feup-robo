@@ -1,0 +1,8 @@
+prefix=/home/bigz/feup-robo/assignment_2/devel
+
+Name: code
+Description: Description of code
+Version: 0.0.0
+Cflags: -I/home/bigz/feup-robo/assignment_2/src/code/.
+Libs: -L/home/bigz/feup-robo/assignment_2/devel/lib 
+Requires: roslib roscpp tf stdr_msgs geometry_msgs sensor_msgs nav_msgs
