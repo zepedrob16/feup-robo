@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/bigz/feup-robo/assignment_2/src/code/hello.cpp" "/home/bigz/feup-robo/assignment_2/build/code/CMakeFiles/hello.dir/hello.cpp.o"
+  "/home/bigz/feup-robo/assignment_2/src/code/robot_script.cpp" "/home/bigz/feup-robo/assignment_2/build/code/CMakeFiles/hello.dir/robot_script.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

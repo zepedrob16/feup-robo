@@ -1032,6 +1032,33 @@ hello.cpp.s:
 	cd /home/bigz/feup-robo/assignment_2/build && $(MAKE) -f code/CMakeFiles/hello.dir/build.make code/CMakeFiles/hello.dir/hello.cpp.s
 .PHONY : hello.cpp.s
 
+robot_script.o: robot_script.cpp.o
+
+.PHONY : robot_script.o
+
+# target to build an object file
+robot_script.cpp.o:
+	cd /home/bigz/feup-robo/assignment_2/build && $(MAKE) -f code/CMakeFiles/hello.dir/build.make code/CMakeFiles/hello.dir/robot_script.cpp.o
+.PHONY : robot_script.cpp.o
+
+robot_script.i: robot_script.cpp.i
+
+.PHONY : robot_script.i
+
+# target to preprocess a source file
+robot_script.cpp.i:
+	cd /home/bigz/feup-robo/assignment_2/build && $(MAKE) -f code/CMakeFiles/hello.dir/build.make code/CMakeFiles/hello.dir/robot_script.cpp.i
+.PHONY : robot_script.cpp.i
+
+robot_script.s: robot_script.cpp.s
+
+.PHONY : robot_script.s
+
+# target to generate assembly for a file
+robot_script.cpp.s:
+	cd /home/bigz/feup-robo/assignment_2/build && $(MAKE) -f code/CMakeFiles/hello.dir/build.make code/CMakeFiles/hello.dir/robot_script.cpp.s
+.PHONY : robot_script.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1104,6 +1131,9 @@ help:
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"
+	@echo "... robot_script.o"
+	@echo "... robot_script.i"
+	@echo "... robot_script.s"
 .PHONY : help
 
 

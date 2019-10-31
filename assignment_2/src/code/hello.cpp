@@ -1,9 +1,12 @@
 #include <ros/ros.h>
+#include "robot_script.h"
 
 int main(int argc, char **argv) {
-	ros::init(argc, argv, "hello_ros");
+	ros::init(argc, argv, "robot_main_node", ros::init_options::AnonymousName);
 
-	ros::NodeHandle nh;
+	RobotScript obj(argc, argv);
 
-	ROS_INFO_STREAM("Hello, ROS!");
+	ros::spin();
+
+	return 0;
 }

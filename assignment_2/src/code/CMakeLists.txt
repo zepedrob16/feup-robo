@@ -34,6 +34,6 @@ catkin_package(
 )
 
 
-add_executable(hello hello.cpp)
+add_executable(hello hello.cpp robot_script.cpp robot_script.h)
 target_link_libraries(hello ${catkin_LIBRARIES})
 

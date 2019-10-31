@@ -1810,7 +1810,7 @@ clean: code/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
 code/CMakeFiles/hello.dir/all:
 	$(MAKE) -f code/CMakeFiles/hello.dir/build.make code/CMakeFiles/hello.dir/depend
 	$(MAKE) -f code/CMakeFiles/hello.dir/build.make code/CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bigz/feup-robo/assignment_2/build/CMakeFiles --progress-num=12,13 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bigz/feup-robo/assignment_2/build/CMakeFiles --progress-num=12,13,14 "Built target hello"
 .PHONY : code/CMakeFiles/hello.dir/all
 
 # Include target in all.
@@ -1820,7 +1820,7 @@ all: code/CMakeFiles/hello.dir/all
 
 # Build rule for subdir invocation for target.
 code/CMakeFiles/hello.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bigz/feup-robo/assignment_2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bigz/feup-robo/assignment_2/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 code/CMakeFiles/hello.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bigz/feup-robo/assignment_2/build/CMakeFiles 0
 .PHONY : code/CMakeFiles/hello.dir/rule
