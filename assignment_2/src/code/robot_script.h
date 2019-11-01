@@ -21,6 +21,8 @@ class RobotScript
     private:
     	ros::Publisher cmd_vel_advertiser;
     	ros::Subscriber laser_subscriber;
+    	#define PI 3.14159265358979323846;
+    	int foundWall;
       
     public:
     
@@ -29,6 +31,8 @@ class RobotScript
       ~RobotScript(void);
       
       void robotScanner(const sensor_msgs::LaserScan& msg);
+
+      float degrees_to_radians(float angle);
       
   };
 
