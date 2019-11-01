@@ -1,3 +1,6 @@
+#ifndef STDR_LINE_FOLLOWING
+#define STDR_LINE_FOLLOWING
+
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -12,15 +15,21 @@
 #include <geometry_msgs/Twist.h>
 #include <sensor_msgs/LaserScan.h>
 #include <sensor_msgs/Range.h>
-#include "std_msgs/String.h"
 
 class RobotScript
   {
     private:
+    	ros::Publisher cmd_vel_advertiser;
+    	ros::Subscriber laser_subscriber;
       
     public:
     
       RobotScript(int argc,char **argv);
-      ~RobotScript();
-      Subscriber(const std_msgs::String::ConstPtr& msg);
+      
+      ~RobotScript(void);
+      
+      void robotScanner(const sensor_msgs::LaserScan& msg);
+      
   };
+
+#endif

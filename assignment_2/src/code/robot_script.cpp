@@ -1,26 +1,30 @@
 #include "robot_script.h"
 using namespace std;
-
+  
 RobotScript::RobotScript(int argc,char **argv) {
-		ros::NodeHandle nh;
 
-		ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("/robot0/cmd_vel", 1000);
+	ros::NodeHandle nh;
 
-		srand(time(0));
+    std::string robot_cmd_vel = std::string("/") + std::string(argv[1]) + std::string("/cmd_vel");
 
-		ros::Rate rate(2);
+    std::string laser = std::string("/") + std::string(argv[1]) + std::string("/") + std::string(argv[2]);
+      
+    laser_subscriber = nh.subscribe(laser.c_str(), 1, &RobotScript::robotScanner, this);
+      
+    cmd_vel_advertiser = nh.advertise<geometry_msgs::Twist>(robot_cmd_vel.c_str(), 1);
+  }
+  
+RobotScript::~RobotScript(void) {
+    
+}
+  
+void RobotScript::robotScanner(const sensor_msgs::LaserScan& msg) {
+   
+	geometry_msgs::Twist cmd;
 
-		while(ros::ok()) {
-			geometry_msgs::Twist msg;
-			msg.linear.x = double(rand())/double(RAND_MAX);
-			msg.angular.z = 2*double(rand())/double(RAND_MAX) - 1;
+	cmd.linear.x = 0.4;
+	cmd.angular.z = 0.1;
 
-			pub.publish(msg);
+	cmd_vel_advertiser.publish(cmd);
 
-			ROS_INFO_STREAM("Sending random velocity command: " << "linear=" << msg.linear.x << "angular=" << msg.angular.z);
-
-
-			ros::Subscriber sub = nh.subscribe("/robot0/cmd_vel", 1000, &ubscriber);
-			rate.sleep();
-	}
 }

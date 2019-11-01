@@ -67,7 +67,6 @@ code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/rosconsole/macro
 code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/sensor_msgs/LaserScan.h
 code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Range.h
 code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
-code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/stdr_msgs/CO2SensorMsg.h
 code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/stdr_msgs/FootprintMsg.h
 code/CMakeFiles/hello.dir/hello.cpp.o: /opt/ros/kinetic/include/stdr_msgs/KinematicMsg.h
@@ -149,7 +148,6 @@ code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/rosconsol
 code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/sensor_msgs/LaserScan.h
 code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Range.h
 code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
-code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/stdr_msgs/CO2SensorMsg.h
 code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/stdr_msgs/FootprintMsg.h
 code/CMakeFiles/hello.dir/robot_script.cpp.o: /opt/ros/kinetic/include/stdr_msgs/KinematicMsg.h
