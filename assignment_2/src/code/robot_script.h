@@ -23,7 +23,15 @@ class RobotScript
     	ros::Subscriber laser_subscriber;
     	#define PI 3.14159265358979323846;
     	int foundWall;
-      
+
+    	enum State {
+    		NONE,
+    		FOLLOWING_WALL,
+    		TURNING_RIGHT,
+    		TURNING_LEFT
+    	};
+      	
+      	State state;
     public:
     
       RobotScript(int argc,char **argv);
