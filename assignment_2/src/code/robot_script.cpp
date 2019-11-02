@@ -38,15 +38,14 @@ void RobotScript::robotScanner(const sensor_msgs::LaserScan& msg) {
 	for (int i = 0; i < msg.ranges.size(); i++) {
 		current_angle = min_angle + (degrees_to_radians(msg.angle_increment) * i);
 
-		if (current_angle < 0 && current_angle > -30 && msg.ranges[i] <= 2.0) {
+		if (current_angle < 0 && current_angle > -30 && msg.ranges[i] <= 2.0 && msg.ranges[0] >= (msg.range_max * 1/4)) {
 			cmd.linear.x = 0.0;
-			cmd.angular.z = 0.2;
-			foundWall = 1;
+			cmd.angular.z = 0.4;
 		}
 
 		else if (current_angle <= -60 && current_angle >= - 80 &&msg.ranges[i] >= 3.0) {
 			cmd.linear.x = 0.0;
-			cmd.angular.z = -0.2;
+			cmd.angular.z = -0.4;
 		}
 		//else if (current_angle < 90 && msg.ranges[i] <= 3.0) {
 		//	cmd.angular.z = 0.1;
