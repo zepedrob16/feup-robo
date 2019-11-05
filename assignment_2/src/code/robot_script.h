@@ -25,13 +25,14 @@ class RobotScript
     	int foundWall;
 
     	enum State {
-    		NONE,
+    		FIND_WALL,
     		FOLLOWING_WALL,
     		TURNING_RIGHT,
     		TURNING_LEFT
     	};
       	
       	State state;
+      	float min_angle;
     public:
     
       RobotScript(int argc,char **argv);
@@ -40,7 +41,7 @@ class RobotScript
       
       void robotScanner(const sensor_msgs::LaserScan& msg);
 
-      float degrees_to_radians(float angle);
+      float radians_to_degrees(float angle);
       
   };
 
