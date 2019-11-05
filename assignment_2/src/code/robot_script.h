@@ -22,26 +22,29 @@ class RobotScript
     	ros::Publisher cmd_vel_advertiser;
     	ros::Subscriber laser_subscriber;
     	#define PI 3.14159265358979323846;
-    	int foundWall;
 
     	enum State {
-    		FIND_WALL,
-    		FOLLOWING_WALL,
-    		TURNING_RIGHT,
-    		TURNING_LEFT
+    		FIND_WALL, // the robot is attempting to find its first wall
+    		FOLLOWING_WALL, //the robot is following a wall
+    		TURNING_RIGHT, //the robot is turning right
+    		TURNING_LEFT //the robot is turning left
     	};
       	
       	State state;
       	float min_angle;
     public:
     
-      RobotScript(int argc,char **argv);
+    //constructor
+    RobotScript(int argc,char **argv);
       
-      ~RobotScript(void);
-      
-      void robotScanner(const sensor_msgs::LaserScan& msg);
+    //destructor
+    ~RobotScript(void);
+     
+    //main function
+    void robotScanner(const sensor_msgs::LaserScan& msg);
 
-      float radians_to_degrees(float angle);
+    //function that turns radians to degrees
+    float radians_to_degrees(float angle);
       
   };
 
