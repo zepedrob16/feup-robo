@@ -1,3 +1,5 @@
+Just want to start off by saying that installing ros-stdr on Manjaro is a huge headache and after many unsuccessful attempts of trying to install it, we just ended up with an Ubuntu VM on a Windows 10 host and called it a day.
+
 The project is divided into the following structure
 ```
 +-- src
