@@ -53,25 +53,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\AgentEditor.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\BehaviorParametersEditor.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\BrainParametersDrawer.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\DemonstrationDrawer.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\DemonstrationImporter.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\ResetParameterDrawer.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\DemonstrationTests.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\DiscreteActionOutputApplierTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\EditModeTestActionMasker.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\EditModeTestInternalBrainTensorApplier.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\EditModeTestInternalBrainTensorGenerator.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\MLAgentsEditModeTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\MultinomialTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\RandomNormalTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\RayPerceptionTests.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\StandaloneBuildTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\TensorUtilsTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\TimerTest.cs" />
-     <Compile Include="Assets\Scenes\ML-Agents\Editor\Tests\UtilitiesTests.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\AgentEditor.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\BehaviorParametersEditor.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\BrainParametersDrawer.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\DemonstrationDrawer.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\DemonstrationImporter.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\ResetParameterDrawer.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\DemonstrationTests.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\DiscreteActionOutputApplierTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\EditModeTestActionMasker.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\EditModeTestInternalBrainTensorApplier.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\EditModeTestInternalBrainTensorGenerator.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\MLAgentsEditModeTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\MultinomialTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\RandomNormalTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\RayPerceptionTests.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\StandaloneBuildTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\TensorUtilsTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\TimerTest.cs" />
+     <Compile Include="Assets\ML-Agents\Editor\Tests\UtilitiesTests.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
@@ -295,22 +295,22 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.7f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Google.Protobuf">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/Scenes/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions.TestingHelpers">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/Scenes/ML-Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Barracuda">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/Scenes/ML-Agents/Plugins/Barracuda.Core/Barracuda/Barracuda.dll</HintPath>
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/Barracuda.Core/Barracuda/Barracuda.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/Scenes/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="System.Interactive.Async">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/Scenes/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
  </Reference>
  <Reference Include="Grpc.Core">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/Scenes/ML-Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
