@@ -294,8 +294,8 @@
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.7f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions.TestingHelpers">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
@@ -303,14 +303,14 @@
  <Reference Include="Barracuda">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/Barracuda.Core/Barracuda/Barracuda.dll</HintPath>
  </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
- </Reference>
- <Reference Include="System.Interactive.Async">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ <Reference Include="Google.Protobuf">
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="Grpc.Core">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>

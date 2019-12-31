@@ -168,6 +168,8 @@
      <Compile Include="Assets\ML-Agents\Scripts\UnityAgentsException.cs" />
      <Compile Include="Assets\ML-Agents\Scripts\Utilities.cs" />
      <Compile Include="Assets\Scripts\HockeyAcademy.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Puck.cs" />
      <Compile Include="Assets\Scripts\RobotAgent.cs" />
      <None Include="Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Experimental.compute" />
      <None Include="Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Conv.compute" />
@@ -390,8 +392,8 @@
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.7f2/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions.TestingHelpers">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
@@ -399,14 +401,14 @@
  <Reference Include="Barracuda">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/Barracuda.Core/Barracuda/Barracuda.dll</HintPath>
  </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
- </Reference>
- <Reference Include="System.Interactive.Async">
- <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ <Reference Include="Google.Protobuf">
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="Grpc.Core">
  <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>C:/Github/feup-robo/assignment_3/ROBO/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.7f2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

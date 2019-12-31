@@ -6,35 +6,48 @@ public class RobotAgent : Agent {
     Rigidbody rBody;
     public float speed = 10;
     [HideInInspector] public float oldDistance = 1000f;
+    public Vector3 goal = new Vector3(10f, 0.1f, 0f);
+    private RayPerception3D rayPerception;
+
+    private float cumulativeReward = 0.0f;
+
     void Start () {
         rBody = GetComponent<Rigidbody>();
+        rayPerception = GetComponent<RayPerception3D>();
     }
 
-    public Transform Target;
+    public Transform target;
     public override void AgentReset()
     {
-        if (this.transform.position.y < 0)
-        {
+       // if (this.transform.position.y < 0)
+        //{
             // If the Agent fell, zero its momentum
             this.rBody.angularVelocity = Vector3.zero;
             this.rBody.velocity = Vector3.zero;
-            this.transform.position = new Vector3( 0, 0.5f, 0);
-        }
+            this.transform.position = new Vector3(7f, 0.5f, Random.Range(-2,2));
+        //}
 
-        // Move the target to a new spot
-        Target.position = new Vector3(Random.value * 8 - 4,
+        // Move the target to a new spot       
+        target.position = new Vector3(-6.0f,
                                       0.1f,
-                                      Random.value * 8 - 4);
+                                      Random.Range(-2,2));
     }
 
     public override void CollectObservations() {
         // Target and Agent positions
-        AddVectorObs(Target.position);
+        AddVectorObs(target.position);
         AddVectorObs(this.transform.position);
 
         // Agent velocity
         AddVectorObs(rBody.velocity.x);
         AddVectorObs(rBody.velocity.z);
+
+        float rayDistance = 12f;
+        float[] rayAngles = {30f, 45f, 60f, 75f, 90f, 105f, 120f, 135f, 150f};
+        string[] detectableObjects = {"Target", "Wall"};
+        AddVectorObs(rayPerception.Perceive(rayDistance, rayAngles, detectableObjects, 0f, 0f));
+
+
     }
     public override void AgentAction(float[] vectorAction, string textAction) {
         // Actions, size = 2
@@ -45,26 +58,63 @@ public class RobotAgent : Agent {
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.position,
-                                                Target.position);
-
+                                                target.position);
+        float m = (goal.z - target.position.z) / (goal.x - target.position.x);
+        float b = target.position.z;
         
         // Moving closer to target
-        if (distanceToTarget < oldDistance)
+        /*if (distanceToTarget < oldDistance)
             SetReward(0.1f);
         else
-            SetReward(-0.1f);
+            SetReward(-0.1f);*/
 
         // Reached target
-        if (distanceToTarget < 1.42f) {
+       /* if (distanceToTarget < 1.20f) {
             SetReward(1.0f);
+            cumulativeReward += 1.0f;
             Done();
-        }
+        }*/
 
         // Fell off platform
         if (this.transform.position.y < 0) {
             SetReward(-1.0f);
+            cumulativeReward -= 1.0f;
             Done();
         }
+
+        if (target.position.y <= 0) {
+            SetReward(-1.0f);
+            cumulativeReward -= 1.0f;
+            Done();
+        }
+
+        if (this.transform.position.z <= m * this.transform.position.x + b + 1.0f && this.transform.position.z >= m * this.transform.position.x + b - 1.0f && this.transform.position.x < goal.x - 2) {
+            SetReward(0.1f);
+           // Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            cumulativeReward += 0.1f;
+        }
+        else {
+            SetReward(-0.1f);
+            cumulativeReward -= 0.1f;
+        }
+
+        /*if (target.position.z <= maxZ && target.position.z >= minZ) {
+            SetReward(0.1f);
+        }
+
+        if (target.position.z > maxZ || target.position.z < minZ) {
+            SetReward(-0.1f);
+        }*/
+
+        if (this.transform.position.x <= target.position.x) {
+            SetReward(-0.1f);
+            cumulativeReward -= 0.1f;
+        }
+
+        /*if (cumulativeReward <= -5f) {
+            cumulativeReward = 0.0f;
+            Done();
+        }*/
         
         oldDistance = distanceToTarget;
 
@@ -75,5 +125,14 @@ public class RobotAgent : Agent {
         action[0] = Input.GetAxis("Horizontal");
         action[1] = Input.GetAxis("Vertical");
         return action;
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "Target") {
+            SetReward(1.0f);
+            cumulativeReward += 1.0f;
+            //Done();
+        }
+
     }
 }
