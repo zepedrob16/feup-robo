@@ -167,6 +167,7 @@
      <Compile Include="Assets\ML-Agents\Scripts\Timer.cs" />
      <Compile Include="Assets\ML-Agents\Scripts\UnityAgentsException.cs" />
      <Compile Include="Assets\ML-Agents\Scripts\Utilities.cs" />
+     <Compile Include="Assets\Scripts\AttackerScript.cs" />
      <Compile Include="Assets\Scripts\HockeyAcademy.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Puck.cs" />

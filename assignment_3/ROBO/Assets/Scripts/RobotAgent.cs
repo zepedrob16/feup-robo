@@ -8,15 +8,17 @@ public class RobotAgent : Agent {
     [HideInInspector] public float oldDistance = 1000f;
     public Vector3 goal = new Vector3(10f, 0.1f, 0f);
     private RayPerception3D rayPerception;
-
     private float cumulativeReward = 0.0f;
+    private float timer = 0.0f;
+    public Rigidbody target;
+    private bool moveTowards = false;
 
     void Start () {
         rBody = GetComponent<Rigidbody>();
         rayPerception = GetComponent<RayPerception3D>();
+       // this.transform.rotation = new Quaternion(0f, -Mathf.PI/2, 0f, this.transform.rotation.w);
     }
 
-    public Transform target;
     public override void AgentReset()
     {
        // if (this.transform.position.y < 0)
@@ -25,17 +27,39 @@ public class RobotAgent : Agent {
             this.rBody.angularVelocity = Vector3.zero;
             this.rBody.velocity = Vector3.zero;
             this.transform.position = new Vector3(7f, 0.5f, Random.Range(-2,2));
+            this.transform.rotation = new Quaternion(0f, 0f, 0f, this.transform.rotation.w);
+            this.transform.rotation = new Quaternion(0f, -1f, 0f, this.transform.rotation.w);
         //}
 
         // Move the target to a new spot       
-        target.position = new Vector3(-6.0f,
+        target.transform.position = new Vector3(-6.0f,
                                       0.1f,
-                                      Random.Range(-2,2));
+                                      Random.Range(-1,3));
+
+        target.velocity = Vector3.zero;
+        target.angularVelocity = Vector3.zero;
+        timer = 0.0f;
+
+    //    float randomZed = Random.Range(-1.5f,1.5f);
+      //  goal = new Vector3(10f, 0.1f, randomZed);
+
+        moveTowards = false;
+        float randomNumber = Random.Range(0,4);
+       // Debug.Log(randomNumber);
+        /*if (randomNumber < 2) {
+            target.AddForce(new Vector3(20f,0f,20f));
+        }
+        else if (randomNumber >= 2.0f && randomNumber < 4){
+            target.AddForce(new Vector3(20f,0f,-20f));
+        }
+        else {
+            moveTowards = true;
+        }*/
     }
 
     public override void CollectObservations() {
         // Target and Agent positions
-        AddVectorObs(target.position);
+        AddVectorObs(target.transform.position);
         AddVectorObs(this.transform.position);
 
         // Agent velocity
@@ -57,10 +81,9 @@ public class RobotAgent : Agent {
         rBody.AddForce(controlSignal * speed);
 
         // Rewards
-        float distanceToTarget = Vector3.Distance(this.transform.position,
-                                                target.position);
-        float m = (goal.z - target.position.z) / (goal.x - target.position.x);
-        float b = target.position.z;
+       // float distanceToTarget = Vector3.Distance(this.transform.position,target.position);
+        float m = (goal.z - target.transform.position.z) / (goal.x - target.transform.position.x);
+        float b = target.transform.position.z;
         
         // Moving closer to target
         /*if (distanceToTarget < oldDistance)
@@ -79,12 +102,14 @@ public class RobotAgent : Agent {
         if (this.transform.position.y < 0) {
             SetReward(-1.0f);
             cumulativeReward -= 1.0f;
+            timer = 0.0f;
             Done();
         }
 
-        if (target.position.y <= 0) {
+        if (target.transform.position.x >= 10) {
             SetReward(-1.0f);
             cumulativeReward -= 1.0f;
+            timer = 0.0f;
             Done();
         }
 
@@ -106,7 +131,7 @@ public class RobotAgent : Agent {
             SetReward(-0.1f);
         }*/
 
-        if (this.transform.position.x <= target.position.x) {
+        if (this.transform.position.x <= target.transform.position.x) {
             SetReward(-0.1f);
             cumulativeReward -= 0.1f;
         }
@@ -116,7 +141,16 @@ public class RobotAgent : Agent {
             Done();
         }*/
         
-        oldDistance = distanceToTarget;
+        //oldDistance = distanceToTarget;
+        timer++;
+        if (timer >= 480f){
+            timer = 0.0f;
+           // Done();
+        }
+
+        if (moveTowards) {
+            target.transform.position = Vector3.MoveTowards(target.transform.position, goal, Time.deltaTime * 6);
+        }
 
     }
 
@@ -129,9 +163,17 @@ public class RobotAgent : Agent {
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Target") {
-            SetReward(1.0f);
-            cumulativeReward += 1.0f;
-            //Done();
+            /*if (target.transform.position.x >= this.transform.position.x) {
+                SetReward(-1.0f);
+                timer = 0.0f;
+                Done();
+            } 
+            else {*/
+                SetReward(1.0f);
+                cumulativeReward += 1.0f;
+                timer = 0.0f;
+                //Done();
+            //}
         }
 
     }
